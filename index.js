@@ -38,16 +38,19 @@ app.get('/', (req, res) => {
 
 // incoming requests routed to  path index.md otherwise sends a 404
 // template.html merged with index.md 
-app.use(function(req, res) {
+app.get('/:path*', (req, res) => {
   try {
     const mdPath = __dirname + req.url + '/index.md'
     const mdFile = fs.readFileSync(mdPath, 'utf8')
     const mergeStr = templateFile.toString().replace(/{{content}}/g, marked(mdFile.toString()))
     res.status(200).send(mergeStr)
-
   } catch (err) {
     res.status(404).render('404.ejs')
   }
+})
+
+app.use(function(req, res) {
+  res.status(404).render('404.ejs')
 })
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT} 🐝`))
