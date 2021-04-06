@@ -1,0 +1,28 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Teresa Clark",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "directory-tree": "^2.2.7",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "marked": "^2.0.1"
+  },
+  "scripts": {
+    "start": "node index",
+    "seed": "node './db/seeds.js'",
+    "test": "mocha test/**/*_spec.js --require test/spec_helper --recursive --exit"
+  },
+  "devDependencies": {
+    "bluebird": "^3.7.2",
+    "chai": "^4.3.4",
+    "chai-dom": "^1.9.0",
+    "jsdom": "^16.5.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^8.3.2",
+    "supertest": "^6.1.3"
+  }
+}

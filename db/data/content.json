@@ -1,0 +1,25 @@
+[{
+  "path": "content/about-page",
+  "name": "index.md",
+  "size": 185,
+  "extension": ".md",
+  "type": "file"
+}, {
+  "path": "content/blog/june/company-update",
+  "name": "index.md",
+  "size": 275,
+  "extension": ".md",
+  "type": "file"
+}, {
+  "path": "content/jobs",
+  "name": "index.md",
+  "size": 305,
+  "extension": ".md",
+  "type": "file"
+}, {
+  "path": "content/valves",
+  "name": "index.md",
+  "size": 189,
+  "extension": ".md",
+  "type": "file"
+}]

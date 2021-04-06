@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>Static Content</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+</head>
+<body>
+  <div class='ui basic segment'>
+    <h2 class='ui header stacked segment'>
+      Static Content to view md files
+    </h2>
+  </div>
+  <div class='ui basic segment'>
+    <ul class='ui segment'>
+      <% mdFiles.forEach(function(mdFile) { %>
+        <ul><a href=<%= mdFile.path %>><%= mdFile.path %></a></ul>
+        <% }) 
+      %>
+    </ul>
+  </div>
+</body>
+</html>
