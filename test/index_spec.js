@@ -3,6 +3,7 @@ const chai = require('chai')
 const { JSDOM } = require('jsdom')
 chai.use(require('chai-dom'))
 require('jsdom-global')()
+const fs = require('fs')
 
 describe('GET /', () => {
 
@@ -47,6 +48,22 @@ describe('test/index-test.html', () => {
     it('h1 element should say \'Hello World!\'', () => {
       const element = document.querySelector('h1')
       expect(element).to.have.text('Hello World!')
+    })
+  })
+})
+
+describe('test/index.md', () => {
+  beforeEach((done) => {
+    JSDOM.fromFile('test/index.md')
+      .then((dom) => {
+        global.document = dom.window.document
+      })
+      .then(done, done)
+  })
+  describe('Level 1 heading', () => {
+    it('h1 element should say \'Hello World - md file\'', () => {
+      const element = document.querySelector('h1')
+      expect(element).to.have.text('Hello World - md file')
     })
   })
 })
